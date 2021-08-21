@@ -20,3 +20,46 @@ school_data = {
     '2a': 13,
     '2b': 30
 }
+
+
+def incr_students(class_name):
+    number = school_data[class_name]
+    school_data[class_name] = number + 1
+
+
+def decr_students(class_name):
+    number = school_data[class_name]
+    if number > 0:
+        school_data[class_name] = number - 1
+
+
+def add_class(class_name):
+    school_data[class_name] = 0
+
+
+def remove_class(class_name):
+    del school_data[class_name]
+
+
+def calc_students(school_data):
+    return sum(school_data.values())
+
+
+if __name__ == '__main__':
+    number_1 = school_data['1a']
+    incr_students('1a')
+    assert number_1 == school_data['1a'] - 1
+
+    number_2 = school_data['2a']
+    decr_students('2a')
+    assert number_2 == school_data['2a'] + 1
+
+    add_class('3a')
+    assert 0 == school_data['3a']
+
+    remove_class('2b')
+    assert school_data.get('2b') is None
+
+    assert sum(school_data.values()) == calc_students(school_data)
+    print('Можешь идти спать)))')
+

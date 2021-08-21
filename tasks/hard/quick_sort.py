@@ -60,3 +60,10 @@ def quick_sort(nums):
             _quick_sort(items, split_index + 1, high)
 
     _quick_sort(nums, 0, len(nums) - 1)
+
+
+arr = [12, 11, 13, 5, 6, 7]
+quick_sort(arr)
+n = len(arr)
+for i in range(n):
+    print(arr[i], end=' ')

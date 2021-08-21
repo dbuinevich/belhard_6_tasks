@@ -18,3 +18,26 @@ File «C:/Python/Python3/python_generator.py», line 29, in
 print(next(fib))
 StopIteration
 """
+
+
+def fibonacci(num_count):
+    fib1 = 1
+    fib2 = 2
+    i = 0
+    while i < num_count:
+        yield fib1
+        fib1, fib2 = fib2, fib1 + fib2
+        i += 1
+
+
+fibonacci_gen = fibonacci(5)
+print(next(fibonacci_gen))
+print(next(fibonacci_gen))
+print(next(fibonacci_gen))
+print(next(fibonacci_gen))
+print(next(fibonacci_gen))
+print(next(fibonacci_gen))
+print(next(fibonacci_gen))
+print(next(fibonacci_gen))
+print(next(fibonacci_gen))
+
