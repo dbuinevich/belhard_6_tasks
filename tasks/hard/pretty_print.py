@@ -15,37 +15,38 @@ data = {'a': 123, 123: [1, 2, 3], 'asd': {'c': 654.54}}
     },
 }
 """
-from pprint import pformat
-from yapf import FormatCode
-# import json
-#
+"""
+from print_dict import pd
 data = {'a': 123, 123: [1, 2, 3], 'asd': {'c': 654.54}}
-#
-#
-# print(json.dumps(data, sort_keys=False, indent=4))
+
+pd(data)
+# вот это топовый рабочий вариант без всяких рекурсий
+"""
+
+data = {'a': 123, 123: [1, 2, 3], 'asd': {'c': 654.54}}
 
 
-# def decorator(func):
-#     def wrapper(d, indent=0):
-#         print('{')
-#         result = func(d, indent=0)
-#         print('}')
-#         return result
-#     return wrapper
-#
-#
-# @decorator
-# def pretty(d, indent=0):
-#     for key, value in d.items():
-#         print(f"{'    ' * indent}{key}:", end='')
-#         if isinstance(value, dict):
-#             pretty(value, indent+1)
-#         else:
-#             print(' ' * (indent+1) + str(value))
-#
-#
-# pretty(data)
-data_string = pformat(data)
-formatted_code, _ = FormatCode(data_string)
+def pretty(d, n=1, spaces=''):
+    tab = '\t' * n
+    row = '\n'
+    cl_tab = '\t' * (n - 1)
+    print(spaces + '{' + row, end='')
+    for key, value in d.items():
+        if isinstance(value, dict) is True:
+            if isinstance(key, str) is True:
+                print(f"{tab}'{key}':", end='')
+            else:
+                print(f"{tab}{key}:", end='')
+            pretty(value, n + 1, spaces=' ')
+        else:
+            if isinstance(key, str) is True:
+                print(f"{tab}'{key}': {value},")
+            else:
+                print(f"{tab}{key}: {value},")
+    if n == 1:
+        print(cl_tab + '}')
+    else:
+        print(cl_tab + '},')
 
-print(formatted_code)
+
+pretty(data)

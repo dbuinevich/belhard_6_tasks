@@ -3,18 +3,19 @@
 """
 
 
-def factorial(n, result=1, number=1):
-    if number <= n:
-        return factorial(n, result * number, number + 1)
-    else:
-        return result
-
-
-# def factorial(n, result=1):
-#     if n > 0:
-#         return factorial(n - 1, result * n)
+# def factorial(n, result=1, number=1):
+#     if number <= n:
+#         return factorial(n, result * number, number + 1)
 #     else:
 #         return result
+#
+# тут 2 варианта на выбор
+
+def factorial(n, result=1):
+    if n > 0:
+        return factorial(n - 1, result * n)
+    else:
+        return result
 
 
 if __name__ == '__main__':

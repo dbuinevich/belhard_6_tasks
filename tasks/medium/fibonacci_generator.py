@@ -40,4 +40,3 @@ print(next(fibonacci_gen))
 print(next(fibonacci_gen))
 print(next(fibonacci_gen))
 print(next(fibonacci_gen))
-

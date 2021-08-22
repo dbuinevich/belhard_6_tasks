@@ -62,4 +62,3 @@ if __name__ == '__main__':
 
     assert sum(school_data.values()) == calc_students(school_data)
     print('Можешь идти спать)))')
-

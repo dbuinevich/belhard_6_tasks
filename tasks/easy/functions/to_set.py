@@ -12,4 +12,3 @@ def to_set(list_to_set: list):
 if __name__ == '__main__':
     some_list = [1, 2, 3, 4, 5]
     assert to_set(some_list) == ({1, 2, 3, 4, 5}, 5)
-
