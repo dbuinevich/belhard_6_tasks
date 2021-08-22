@@ -12,3 +12,15 @@
 }
 """
 STR_VAL = 'python is the fastest-growing major programming language'
+
+
+def dict_from_str(str_val: str):
+    letters_list = [char for char in str_val]
+    letters_set = set(letters_list)
+    letters_dict = {}
+    for i in letters_set:
+        letters_dict[i] = str_val.count(i)
+    return letters_dict
+
+
+print(dict_from_str(STR_VAL))

@@ -79,3 +79,10 @@ def merge_sort(nums):
 
     # Объединяем отсортированные списки в результирующий
     return merge(left_list, right_list)
+
+
+arr = [12, 11, 13, 5, 6, 7]
+merge_sort(arr)
+n = len(arr)
+for i in range(n):
+    print(arr[i], end=' ')

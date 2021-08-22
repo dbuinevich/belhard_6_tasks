@@ -4,3 +4,12 @@
 
 для расчета суммы можно воспользоваться функцией sum
 """
+
+
+def calc_sum(*ints) -> int:
+    return sum([*ints])
+
+
+if __name__ == '__main__':
+    assert calc_sum(1, 2, 3, 4, 5) == 15
+    print('Ваууууууу!!!')

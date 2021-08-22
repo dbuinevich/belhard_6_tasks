@@ -51,3 +51,10 @@ def heap_sort(nums):
     for i in range(n - 1, 0, -1):
         nums[i], nums[0] = nums[0], nums[i]
         heapify(nums, i, 0)
+
+
+arr = [12, 11, 13, 5, 6, 7]
+heap_sort(arr)
+n = len(arr)
+for i in range(n):
+    print(arr[i], end=' ')
